@@ -10,7 +10,16 @@ public class Player : MonoBehaviour
 {
 
     [SerializeField]
-    int Speed;
+    private float Speed = 10f;
+
+    private float movementX;
+    //private Rigidbody2D myBody;
+    private SpriteRenderer sr;
+
+    private Animator player_anim;
+    private string RUN_ANIMATION = "Run";
+    private string happy_ANIMATION = "Happy";
+    private bool isGrounded = true;
 
     public int score;
     //public ScoreManager SM_script;
@@ -42,6 +51,16 @@ public class Player : MonoBehaviour
             catch_sound_eggs.Play();
             Destroy(collision.gameObject);
             sparcals.SetActive(false);
+
+            if ( isGrounded)
+            {
+                //isGrounded = false;
+                player_anim.SetTrigger(happy_ANIMATION);
+                //Debug.Log("happy animation work");
+                
+            }
+
+            //StartCoroutine("happy");
 
             if (countegg == 0)
             {
@@ -166,32 +185,55 @@ public class Player : MonoBehaviour
     }
 
 
-        // Start is called before the first frame update
-   void Start()
-   {
+    /*IEnumerator happy()
+    {
+        Happy = true;
 
-   }
+        yield return new WaitForSeconds(10f);
+        Debug.Log("corotine work");
+
+        Happy = false;
+    }*/
+
+
+
+    private void Awake()
+    {
+        //myBody = GetComponent<Rigidbody2D>();
+        player_anim = GetComponent<Animator>();
+
+        sr = GetComponent<SpriteRenderer>();
+    }
+
+    // Start is called before the first frame update
+    void Start()
+    {
+ 
+    }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.RightArrow))
+        /*if (Input.GetKey(KeyCode.RightArrow))
         {
             transform.Translate(new Vector3(1, 0, 0) * Speed * Time.deltaTime);
+
+            player_anim.SetBool(RUN_ANIMATION, true);
         }
 
 
         if (Input.GetKey(KeyCode.LeftArrow))
         {
             transform.Translate(new Vector3(-1, 0, 0) * Speed * Time.deltaTime);
+            player_anim.SetBool(RUN_ANIMATION, true);
         }
 
-
+        */
         float currentXPos = transform.position.x;
-        currentXPos = Mathf.Clamp(currentXPos, -7.41f, 7.41f);
+        currentXPos = Mathf.Clamp(currentXPos, -7.10f, 7.10f);
         transform.position = new Vector3(currentXPos, transform.position.y, transform.position.z);
-
-
+        
+        
 
         if (countegg == 10)
         {
@@ -215,9 +257,45 @@ public class Player : MonoBehaviour
 
         }
 
+
+        
+
+
+
+
+
+
         //SM_script.highscore = score;
 
+        PlayerMovementOnKeyboard();
+        AnimatePlayer();
 
+    }
+
+    void PlayerMovementOnKeyboard()
+    {
+        movementX = Input.GetAxisRaw("Horizontal");  // -1 (left), 0  ,1 (right)
+
+        transform.position += new Vector3(movementX, 0f, 0f) * Speed * Time.deltaTime;
+    }
+
+    void AnimatePlayer()
+    {
+        // going to move right
+        if(movementX > 0)
+        {
+            player_anim.SetBool(RUN_ANIMATION, true);
+            sr.flipX = false;
+        }
+        else if(movementX < 0) // going to move left
+        {
+            player_anim.SetBool(RUN_ANIMATION, true);
+            sr.flipX = true;
+        }
+        else
+        {
+            player_anim.SetBool(RUN_ANIMATION, false);
+        }
     }
 
 

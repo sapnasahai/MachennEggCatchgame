@@ -271,11 +271,11 @@ MonoBehaviour:
   Egg_prefab: {fileID: 8327141005737682555, guid: cb4488ff9967f564d863d10bdfec1f50, type: 3}
   golden_prefab: {fileID: 144309197972982156, guid: 4fe81a55da497a64a920cdbfa869d021, type: 3}
   special_prefab: {fileID: 7193856062849920691, guid: d190dde8e01153a43ba322fa64b79211, type: 3}
-  interval1: 2.5
-  interval2: 3.3
-  interval3: 5.5
-  player_script: {fileID: 3941172095749628605, guid: b7facf423bc7833408fd60bf87c345e5, type: 3}
-  text: {fileID: 2675747617122560465, guid: 66fc6d5e302c7a64b949cefc5f05f53e, type: 3}
-  scoremanager_script: {fileID: 4372948580611251749, guid: 030c1589f9c76e04d836ce0668276c2d, type: 3}
-  gameOverScoreText: {fileID: 7122293383416692463, guid: a9b9ed14d088d714ead145f4514905de, type: 3}
-  gameOverHighScoreText: {fileID: 9165556523822990740, guid: b5776e2c1f0c4dc489670986d9cc49ff, type: 3}
+  interval1: 6
+  interval2: 10
+  interval3: 12
+  player_script: {fileID: 0}
+  text: {fileID: 0}
+  scoremanager_script: {fileID: 0}
+  gameOverScoreText: {fileID: 0}
+  gameOverHighScoreText: {fileID: 0}

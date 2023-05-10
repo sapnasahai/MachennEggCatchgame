@@ -72,7 +72,7 @@ public class BirdController : MonoBehaviour
         Instantiate(Bird, new Vector3(tempPosx, tempPosy, 0), Quaternion.identity);
         //Instantiate(Bird, new Vector3(tempPosx, 3.16f, 0), Quaternion.identity);
 
-    }
+     }
 
 
 
@@ -84,10 +84,12 @@ public class BirdController : MonoBehaviour
         //Instantiate(myObject, playerTransform.position, Quaternion.identity);
 
         // Move the bird to the left
+
+        //rb.velocity = new Vector2(speed, rb.velocity.y);
+        
         transform.Translate(Vector2.left * speed * Time.deltaTime);
 
-        
-        if(transform.position.x < -9.2f)
+        if (transform.position.x < -9.2f)
         {
             Destroy(gameObject);
         }

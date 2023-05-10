@@ -85,8 +85,10 @@ public class Ground : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
+        
+    
         switch (EndgameLife)
         {
             case 0:
