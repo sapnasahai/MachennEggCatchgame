@@ -52,15 +52,15 @@ public class Player : MonoBehaviour
             Destroy(collision.gameObject);
             sparcals.SetActive(false);
 
-            if ( isGrounded)
+            /*if ( isGrounded)
             {
                 //isGrounded = false;
                 player_anim.SetTrigger(happy_ANIMATION);
                 //Debug.Log("happy animation work");
                 
-            }
+            }*/
 
-            //StartCoroutine("happy");
+            
 
             if (countegg == 0)
             {
@@ -185,15 +185,7 @@ public class Player : MonoBehaviour
     }
 
 
-    /*IEnumerator happy()
-    {
-        Happy = true;
-
-        yield return new WaitForSeconds(10f);
-        Debug.Log("corotine work");
-
-        Happy = false;
-    }*/
+    
 
 
 
@@ -240,6 +232,8 @@ public class Player : MonoBehaviour
             score += 5;
             countegg = 0;
             Debug.Log(" egg cont 5 point work");
+
+            player_anim.SetTrigger(happy_ANIMATION);
 
 
             E1.SetActive(false);

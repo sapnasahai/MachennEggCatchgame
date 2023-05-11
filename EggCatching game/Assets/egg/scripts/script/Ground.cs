@@ -24,7 +24,8 @@ public class Ground : MonoBehaviour
     [SerializeField] private AudioSource lifeloss_sound;
     [SerializeField] private AudioSource explosion_sound;
 
-
+    //private Animator player_anim;
+    //private string sad_ANIMATION = "Sad";
 
     //public GameManager game_manager;
     //public GameManager2 game_manager2;
@@ -38,10 +39,11 @@ public class Ground : MonoBehaviour
             lifeloss_sound.Play();
             Destroy(collision.gameObject,8f);
 
+            //player_anim.SetTrigger(sad_ANIMATION);
             //egg = broken_egg;
             //broken_egg.SetActive(true);
             //Destroy(broken_egg, 5);
-           
+
 
         }
         if (collision.tag == "golden_egg")
@@ -76,6 +78,9 @@ public class Ground : MonoBehaviour
         }
 
     }
+
+
+    
 
 
     // Start is called before the first frame update

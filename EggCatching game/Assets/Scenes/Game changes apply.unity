@@ -2859,6 +2859,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1868933865233432001, guid: 4fb992e8773ecbe4bb4adc2871b5b574, type: 3}
+      propertyPath: m_Size.x
+      value: 8.78437
+      objectReference: {fileID: 0}
+    - target: {fileID: 1868933865233432001, guid: 4fb992e8773ecbe4bb4adc2871b5b574, type: 3}
+      propertyPath: m_Size.y
+      value: 4.0595155
+      objectReference: {fileID: 0}
+    - target: {fileID: 1868933865233432001, guid: 4fb992e8773ecbe4bb4adc2871b5b574, type: 3}
+      propertyPath: m_Offset.x
+      value: -1.8843527
+      objectReference: {fileID: 0}
+    - target: {fileID: 1868933865233432001, guid: 4fb992e8773ecbe4bb4adc2871b5b574, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.38406593
+      objectReference: {fileID: 0}
     - target: {fileID: 3471413152606343804, guid: 4fb992e8773ecbe4bb4adc2871b5b574, type: 3}
       propertyPath: m_RootOrder
       value: 13
@@ -2901,6 +2917,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3471413152606343804, guid: 4fb992e8773ecbe4bb4adc2871b5b574, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5200726408882561494, guid: 4fb992e8773ecbe4bb4adc2871b5b574, type: 3}
+      propertyPath: m_UpdateMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5200726408882561494, guid: 4fb992e8773ecbe4bb4adc2871b5b574, type: 3}
+      propertyPath: m_ApplyRootMotion
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8072083625938952276, guid: 4fb992e8773ecbe4bb4adc2871b5b574, type: 3}
@@ -5062,6 +5086,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64826f79bf1338b49bbed4ab21f44e8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!50 &1911278917
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1911278904}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1961603248
 GameObject:
   m_ObjectHideFlags: 0
