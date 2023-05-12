@@ -373,14 +373,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 588b0de1acbb7074ba81f647be40f1e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EndgameLife: 6
   L1: {fileID: 374903815}
   L2: {fileID: 316538323}
   L3: {fileID: 1890061342}
   L4: {fileID: 1504521760}
   L5: {fileID: 370299509}
   L6: {fileID: 1976756400}
-  gameOver: {fileID: 1071498083}
+  Restart_panel: {fileID: 0}
+  LeaderBoard_Panel: {fileID: 0}
   player: {fileID: 1978008877}
+  lifeloss_sound: {fileID: 0}
+  explosion_sound: {fileID: 0}
 --- !u!61 &304282844
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2034,6 +2038,7 @@ MonoBehaviour:
   secondSpawn: 2
   minTransform: -6.2
   maxTransform: -6.2
+  gm1: 1
   Egg_normal: {fileID: 0}
   player_script: {fileID: 1978008878}
   text: {fileID: 775651250}
@@ -2103,6 +2108,7 @@ MonoBehaviour:
   secondSpawn: 6
   minTransform: 4.75
   maxTransform: 4.75
+  gm1: 1
   Egg_normal: {fileID: 0}
   player_script: {fileID: 1978008878}
   text: {fileID: 775651250}
@@ -2690,6 +2696,7 @@ MonoBehaviour:
   secondSpawn: 2
   minTransform: 2.12
   maxTransform: 2.12
+  gm1: 1
   Egg_normal: {fileID: 0}
   player_script: {fileID: 1978008878}
   text: {fileID: 775651250}
@@ -2714,6 +2721,7 @@ MonoBehaviour:
   maxTransform: 6.15
   player_script: {fileID: 1978008878}
   text: {fileID: 775651250}
+  gm2: 1
 --- !u!1 &1430755031
 GameObject:
   m_ObjectHideFlags: 0
@@ -3534,14 +3542,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 588b0de1acbb7074ba81f647be40f1e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EndgameLife: 6
   L1: {fileID: 374903815}
   L2: {fileID: 316538323}
   L3: {fileID: 1890061342}
   L4: {fileID: 1504521760}
   L5: {fileID: 370299509}
   L6: {fileID: 1976756400}
-  gameOver: {fileID: 1071498083}
+  Restart_panel: {fileID: 0}
+  LeaderBoard_Panel: {fileID: 0}
   player: {fileID: 1978008877}
+  lifeloss_sound: {fileID: 0}
+  explosion_sound: {fileID: 0}
 --- !u!1 &1794182685
 GameObject:
   m_ObjectHideFlags: 0
@@ -4044,6 +4056,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 25
   score: 0
+  normal_egg: {fileID: 0}
+  golden_egg: {fileID: 0}
+  special_egg: {fileID: 0}
+  script: {fileID: 0}
+  sparcals: {fileID: 0}
+  E1: {fileID: 0}
+  E2: {fileID: 0}
+  E3: {fileID: 0}
+  E4: {fileID: 0}
+  E5: {fileID: 0}
+  E6: {fileID: 0}
+  E7: {fileID: 0}
+  E8: {fileID: 0}
+  E9: {fileID: 0}
+  E10: {fileID: 0}
+  Egglife: 10
+  countegg: 0
+  catch_sound_eggs: {fileID: 0}
+  lifeloss_sound: {fileID: 0}
 --- !u!61 &1978008879
 BoxCollider2D:
   m_ObjectHideFlags: 0

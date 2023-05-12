@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 3001388981926883407}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 10.09, y: 3.16, z: 0}
-  m_LocalScale: {x: 0.1815, y: 0.1815, z: 0.726}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 0.726}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -78,7 +78,7 @@ SpriteRenderer:
   m_SortingLayerID: 721157275
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 2492578880753983697, guid: 5034083bde2b1294181c48fd54868f4b, type: 3}
+  m_Sprite: {fileID: -1337906835, guid: 1ac184a2fad700f4fb1899171ede7353, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -99,7 +99,7 @@ Animator:
   m_GameObject: {fileID: 3001388981926883407}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 4e6f7f7acb9a1eb4ab40a474683516cb, type: 2}
+  m_Controller: {fileID: 9100000, guid: 0f4952cc2086ec44e95b7d03fdd7857a, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -144,18 +144,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.03271103, y: 0.0030997992}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 11.54, y: 9.74}
+    oldSize: {x: 1.54, y: 0.86}
     newSize: {x: 11.54, y: 9.74}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 6.2, y: 5.9}
+  m_Size: {x: 1.6745377, y: 0.91901994}
   m_EdgeRadius: 0
 --- !u!82 &8855537470316444580
 AudioSource:
@@ -271,11 +271,12 @@ MonoBehaviour:
   Egg_prefab: {fileID: 8327141005737682555, guid: cb4488ff9967f564d863d10bdfec1f50, type: 3}
   golden_prefab: {fileID: 144309197972982156, guid: 4fe81a55da497a64a920cdbfa869d021, type: 3}
   special_prefab: {fileID: 7193856062849920691, guid: d190dde8e01153a43ba322fa64b79211, type: 3}
-  interval1: 6
-  interval2: 10
-  interval3: 12
+  interval1: 4
+  interval2: 11
+  interval3: 15
   player_script: {fileID: 0}
   text: {fileID: 0}
   scoremanager_script: {fileID: 0}
   gameOverScoreText: {fileID: 0}
   gameOverHighScoreText: {fileID: 0}
+  isMovingRight: 1

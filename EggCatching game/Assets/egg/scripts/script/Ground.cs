@@ -39,6 +39,7 @@ public class Ground : MonoBehaviour
             lifeloss_sound.Play();
             Destroy(collision.gameObject,8f);
 
+            
             //player_anim.SetTrigger(sad_ANIMATION);
             //egg = broken_egg;
             //broken_egg.SetActive(true);
@@ -106,10 +107,11 @@ public class Ground : MonoBehaviour
                 //gameOver.SetActive(true);
                 //Time.timeScale = 0f;
                 Restart_panel.SetActive(true);
+                
                 //RestartButton.SetActive(true);
                 //game_manager.gm1= false;
                 //game_manager2.gm2 = false;
-                
+
 
 
                 break;
@@ -231,5 +233,11 @@ public class Ground : MonoBehaviour
     {
         LeaderBoard_Panel.SetActive(true);
     }
+
+
+    
+
+
+
 
 }

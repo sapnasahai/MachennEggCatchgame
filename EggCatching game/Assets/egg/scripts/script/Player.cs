@@ -13,13 +13,14 @@ public class Player : MonoBehaviour
     private float Speed = 10f;
 
     private float movementX;
-    //private Rigidbody2D myBody;
+    private Rigidbody2D myBody;
     private SpriteRenderer sr;
 
     private Animator player_anim;
     private string RUN_ANIMATION = "Run";
     private string happy_ANIMATION = "Happy";
-    private bool isGrounded = true;
+    //private string sad_ANIMATION = "Sad";
+    //private bool isGrounded = true;
 
     public int score;
     //public ScoreManager SM_script;
@@ -129,57 +130,49 @@ public class Player : MonoBehaviour
         }
 
 
+        if (collision.tag == "golden_egg")
+        {
+            score += 20;
+            catch_sound_eggs.Play();
+            Destroy(collision.gameObject);
+            sparcals.SetActive(true);
+            Debug.Log("godlen work");
 
 
 
+        }
 
+        if (collision.tag == "special_egg")
+        {
+            score += 5;
+            //script.EndgameLife += 1;
+            catch_sound_eggs.Play();
+            Destroy(collision.gameObject);
+            sparcals.SetActive(false);
+            Debug.Log("special work");
+        }
 
-
-
-
-
-            if (collision.tag == "golden_egg")
+        if (collision.tag == "special_egg") // life will only increse when life is less than 6 (actual life)
+        {
+            if (script.EndgameLife < 6)
             {
-                score += 20;
-                catch_sound_eggs.Play();
-                Destroy(collision.gameObject);
-                sparcals.SetActive(true);
-                Debug.Log("godlen work");
-
-
-
+                script.EndgameLife += 1;
+                Debug.Log("life increse");
             }
 
-            if (collision.tag == "special_egg")
-            {
-                score += 5;
-                //script.EndgameLife += 1;
-                catch_sound_eggs.Play();
-                Destroy(collision.gameObject);
-                sparcals.SetActive(false);
-                Debug.Log("special work");
-            }
-
-            if (collision.tag == "special_egg") // life will only increse when life is less than 6 (actual life)
-            {
-                if (script.EndgameLife < 6)
-                {
-                    script.EndgameLife += 1;
-                    Debug.Log("life increse");
-                }
 
 
+        }
 
-            }
+        if (collision.tag == "Bomb")
+        {
+            script.EndgameLife -= 1;
+            lifeloss_sound.Play();
+            //Destroy(collision.gameObject, 0.3f);
+            Debug.Log("bomb work life decrese");
 
-            if (collision.tag == "Bomb")
-            {
-                script.EndgameLife -= 1;
-                lifeloss_sound.Play();
-                //Destroy(collision.gameObject, 0.3f);
 
-            }
-
+        }
 
 
     }
@@ -191,7 +184,7 @@ public class Player : MonoBehaviour
 
     private void Awake()
     {
-        //myBody = GetComponent<Rigidbody2D>();
+        myBody = GetComponent<Rigidbody2D>();
         player_anim = GetComponent<Animator>();
 
         sr = GetComponent<SpriteRenderer>();
@@ -206,21 +199,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*if (Input.GetKey(KeyCode.RightArrow))
-        {
-            transform.Translate(new Vector3(1, 0, 0) * Speed * Time.deltaTime);
-
-            player_anim.SetBool(RUN_ANIMATION, true);
-        }
-
-
-        if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            transform.Translate(new Vector3(-1, 0, 0) * Speed * Time.deltaTime);
-            player_anim.SetBool(RUN_ANIMATION, true);
-        }
-
-        */
+        
         float currentXPos = transform.position.x;
         currentXPos = Mathf.Clamp(currentXPos, -7.10f, 7.10f);
         transform.position = new Vector3(currentXPos, transform.position.y, transform.position.z);
@@ -233,8 +212,8 @@ public class Player : MonoBehaviour
             countegg = 0;
             Debug.Log(" egg cont 5 point work");
 
-            player_anim.SetTrigger(happy_ANIMATION);
-
+            //player_anim.SetTrigger(happy_ANIMATION);
+            PlayerHappy();
 
             E1.SetActive(false);
             E2.SetActive(false);
@@ -250,13 +229,6 @@ public class Player : MonoBehaviour
 
 
         }
-
-
-        
-
-
-
-
 
 
         //SM_script.highscore = score;
@@ -291,6 +263,17 @@ public class Player : MonoBehaviour
             player_anim.SetBool(RUN_ANIMATION, false);
         }
     }
+
+
+    void PlayerHappy()
+    {
+
+        player_anim.SetTrigger(happy_ANIMATION);
+        
+    }
+
+
+    
 
 
 

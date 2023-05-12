@@ -8,7 +8,7 @@ public class MainMenu : MonoBehaviour
     
     public void PlayGame()
     {
-        SceneManager.LoadScene("Game 3");
+        SceneManager.LoadScene("Game changes apply");
     }
 
     
