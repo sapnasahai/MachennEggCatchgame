@@ -229,13 +229,17 @@ public class Ground : MonoBehaviour
         ScoreManager.instance.Resetscore();
     }
 
-    public void LeaderBoard()
+    public void Exit()
     {
-        LeaderBoard_Panel.SetActive(true);
+        Application.Quit();
+        Debug.Log("exit Application");
     }
 
+    public void goToHome()
+    {
+        SceneManager.LoadScene("Game Settings");
+    }
 
-    
 
 
 
